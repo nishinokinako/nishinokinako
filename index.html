@@ -127,7 +127,7 @@
       margin-bottom: 6px;
     }
 
-    /* SNSボタン */
+    /* SNSボタン（画像のみ） */
     .sns-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -148,31 +148,9 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.11);
     }
 
-    .sns-thumb {
-      height: 96px;
-      overflow: hidden;
-    }
-
-    .sns-thumb img {
+    .sns-card img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .sns-body {
-      padding: 8px 10px 10px;
-      font-size: 12px;
-    }
-
-    .sns-title {
-      font-weight: bold;
-      margin-bottom: 4px;
-      font-size: 13px;
-    }
-
-    .sns-caption {
-      font-size: 11px;
-      color: #555;
+      height: auto;      /* 正方形画像をそのまま表示 */
     }
 
     /* ギャラリー */
@@ -258,9 +236,6 @@
       .profile-photo {
         flex: 0 0 140px;
       }
-      .sns-thumb {
-        height: 110px;
-      }
       .gallery-item img {
         height: 170px;
       }
@@ -304,91 +279,44 @@
       </div>
     </section>
 
-    <!-- SNS / LINK -->
+    <!-- SNS / LINK（画像だけボタン） -->
     <section id="links">
       <h2>LINK &amp; SNS</h2>
       <p style="font-size:12px; margin-bottom:6px;">
-        各種SNS・配信・イラスト活動へのリンクです。写真付きボタンから移動できます。
+        各種SNS・配信・イラスト活動へのリンクです。画像ボタンから移動できます。
       </p>
       <div class="sns-grid">
         <a class="sns-card" href="https://x.com/nishinokinako" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="x.jpg" alt="X（旧Twitter） 西野きなこ">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">X（旧Twitter）</div>
-            <div class="sns-caption">出演情報や日常のつぶやきはこちら。</div>
-          </div>
+          <img src="x.jpg" alt="X（旧Twitter） 西野きなこ">
         </a>
 
         <a class="sns-card" href="https://www.instagram.com/nishinokinako?igsh=ZzVrdXQ0ZjhzaGI4&utm_source=qr" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="instagram.jpg" alt="Instagram 西野きなこ">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">Instagram</div>
-            <div class="sns-caption">撮影会・オフショットなどのフォトログ。</div>
-          </div>
+          <img src="instagram.jpg" alt="Instagram 西野きなこ">
         </a>
 
         <a class="sns-card" href="https://www.tiktok.com/@nishinokinako?_r=1&_t=ZS-9218UNPeCvP" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="tiktok.jpg" alt="TikTok 西野きなこ">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">TikTok</div>
-            <div class="sns-caption">配信・コスプレ・ショート動画など。</div>
-          </div>
+          <img src="tiktok.jpg" alt="TikTok 西野きなこ">
         </a>
 
         <a class="sns-card" href="https://youtube.com/channel/UCPk1EyaAMD4S6aCt0HcCyUQ?si=Z20WrqFtqLs3qio1" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="youtube.jpg" alt="YouTube 西野きなこ">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">YouTube</div>
-            <div class="sns-caption">イベントの様子や企画動画などを準備中。</div>
-          </div>
+          <img src="youtube.jpg" alt="YouTube 西野きなこ">
         </a>
 
         <a class="sns-card" href="https://lin.ee/zvwF7BM" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="line.jpg" alt="LINE公式 西野きなこ">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">公式LINE</div>
-            <div class="sns-caption">出演依頼や最新情報の受け取りに。</div>
-          </div>
+          <img src="line.jpg" alt="LINE公式 西野きなこ">
         </a>
 
         <a class="sns-card" href="https://siluia.com" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="siluia.jpg" alt="Siluia イラストサイト">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">Siluia（イラストサイト）</div>
-            <div class="sns-caption">イラスト・Live2Dキャラクターの制作実績。</div>
-          </div>
+          <img src="siluia.jpg" alt="Siluia イラストサイト">
         </a>
 
         <a class="sns-card" href="https://www.amazon.jp/hz/wishlist/ls/B97MB4VSWH2E?ref_=wl_share" target="_blank" rel="noopener">
-          <div class="sns-thumb">
-            <img src="amazon-wishlist.jpg" alt="Amazon ほしい物リスト">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">Amazon ほしい物リスト</div>
-            <div class="sns-caption">活動を応援いただける方向けのリストです。</div>
-          </div>
+          <img src="amazon-wishlist.jpg" alt="Amazon ほしい物リスト">
         </a>
 
+        <!-- 活動支援BOX：URLができたら href を追加すればボタン化完了 -->
         <div class="sns-card">
-          <div class="sns-thumb">
-            <img src="support-box.jpg" alt="活動支援BOX coming soon">
-          </div>
-          <div class="sns-body">
-            <div class="sns-title">活動支援BOX</div>
-            <div class="sns-caption">coming soon… 準備中です。</div>
-          </div>
+          <img src="support-box.jpg" alt="活動支援BOX（準備中）">
         </div>
       </div>
     </section>

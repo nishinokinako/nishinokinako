@@ -2,10 +2,478 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>西野きなこ Official</title>
+  <title>西野きなこ Official Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "YuGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      color: #222;
+      background-color: #f5f7fb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+      box-sizing: border-box;
+    }
+
+    /* ヘッダー */
+    .hero {
+      position: relative;
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("rq-header.jpg.JPEG") center center / cover no-repeat;
+      filter: brightness(0.55);
+      transform: scale(1.03);
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 32px 16px 40px;
+      max-width: 980px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      letter-spacing: 0.12em;
+      margin: 0 0 8px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      opacity: 0.9;
+      margin: 0 0 16px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.18);
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* セクション共通 */
+    section {
+      margin-top: 32px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      padding: 20px 18px 22px;
+    }
+
+    section h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      border-left: 4px solid #3c7cff;
+      padding-left: 8px;
+    }
+
+    .profile-inner {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-photo {
+      flex: 0 0 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #e3ecff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .profile-text {
+      flex: 1 1 200px;
+      font-size: 13px;
+    }
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .profile-label {
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 6px;
+    }
+
+    /* SNSボタン */
+    .sns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .sns-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f3f6ff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .sns-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.11);
+    }
+
+    .sns-thumb {
+      height: 96px;
+      overflow: hidden;
+    }
+
+    .sns-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sns-body {
+      padding: 8px 10px 10px;
+      font-size: 12px;
+    }
+
+    .sns-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .sns-caption {
+      font-size: 11px;
+      color: #555;
+    }
+
+    /* ギャラリー */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #eef2ff;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      font-size: 11px;
+      padding: 6px 8px 8px;
+    }
+
+    /* 経歴 */
+    .career-block {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .career-label {
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    .career-block p {
+      margin: 0 0 4px;
+    }
+
+    /* 連絡先 */
+    .contact-text {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .address-box {
+      font-size: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #f6f7fb;
+      border: 1px solid #dde4f6;
+      white-space: pre-line;
+    }
+
+    /* フッター */
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 11px;
+      color: #777;
+    }
+
+    .footer-img-wrap {
+      max-width: 520px;
+      margin: 0 auto 10px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        padding: 40px 20px 46px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .profile-photo {
+        flex: 0 0 140px;
+      }
+      .sns-thumb {
+        height: 110px;
+      }
+      .gallery-item img {
+        height: 170px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>西野きなこ Official Site</h1>
-  <p>準備中</p>
+
+  <!-- ヘッダー -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-sub">Race Queen / Poker Queen / Model / Illustrator</p>
+      <h1 class="hero-title">西野きなこ Official Site</h1>
+      <div>
+        <span class="hero-tag">レースクイーン</span>
+        <span class="hero-tag">ポーカークイーン</span>
+        <span class="hero-tag">コンパニオン</span>
+        <span class="hero-tag">イラストレーター「Siluia」</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+
+    <!-- プロフィール -->
+    <section id="profile">
+      <h2>PROFILE</h2>
+      <div class="profile-inner">
+        <div class="profile-photo">
+          <img src="rq-close.jpg.JPEG" alt="西野きなこ レースクイーン">
+        </div>
+        <div class="profile-text">
+          <div class="profile-name">西野きなこ</div>
+          <div class="profile-label">レースクイーン / ポーカークイーン / タレント・モデル</div>
+          <p>
+            モータースポーツ・ポーカーイベント・ゲームショウなどを中心に活動するマルチタレント。<br>
+            イラストレーター名義「Siluia」としてもキャラクターデザイン・Live2Dなどクリエイティブ分野で活動中。
+          </p>
+          <p>お仕事のご依頼は、所属先 もしくは 公式LINE よりご相談ください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNS / LINK -->
+    <section id="links">
+      <h2>LINK &amp; SNS</h2>
+      <p style="font-size:12px; margin-bottom:6px;">
+        各種SNS・配信・イラスト活動へのリンクです。写真付きボタンから移動できます。
+      </p>
+      <div class="sns-grid">
+        <a class="sns-card" href="https://x.com/nishinokinako" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="jacket-beige.jpg.JPEG" alt="X（旧Twitter） 西野きなこ">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">X（旧Twitter）</div>
+            <div class="sns-caption">出演情報や日常のつぶやきはこちら。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://www.instagram.com/nishinokinako?igsh=ZzVrdXQ0ZjhzaGI4&utm_source=qr" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="dress-yellow.jpg.JPEG" alt="Instagram 西野きなこ">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">Instagram</div>
+            <div class="sns-caption">撮影会・オフショットなどのフォトログ。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://www.tiktok.com/@nishinokinako?_r=1&_t=ZS-9218UNPeCvP" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="maid.jpg.PNG" alt="TikTok 西野きなこ">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">TikTok</div>
+            <div class="sns-caption">配信・コスプレ・ショート動画など。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://youtube.com/channel/UCPk1EyaAMD4S6aCt0HcCyUQ?si=Z20WrqFtqLs3qio1" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="poker-blue.jpg.JPEG" alt="YouTube 西野きなこ">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">YouTube</div>
+            <div class="sns-caption">イベントの様子や企画動画などを準備中。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://lin.ee/zvwF7BM" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="rq-close.jpg.JPEG" alt="LINE公式 西野きなこ">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">公式LINE</div>
+            <div class="sns-caption">出演依頼や最新情報の受け取りに。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://siluia.com" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="cosplay-purple.jpg.JPEG" alt="Siluia イラストサイト">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">Siluia（イラストサイト）</div>
+            <div class="sns-caption">イラスト・Live2Dキャラクターの制作実績。</div>
+          </div>
+        </a>
+
+        <a class="sns-card" href="https://www.amazon.jp/hz/wishlist/ls/B97MB4VSWH2E?ref_=wl_share" target="_blank" rel="noopener">
+          <div class="sns-thumb">
+            <img src="knit-black.jpg.PNG" alt="Amazon ほしい物リスト">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">Amazon ほしい物リスト</div>
+            <div class="sns-caption">活動を応援いただける方向けのリストです。</div>
+          </div>
+        </a>
+
+        <div class="sns-card">
+          <div class="sns-thumb">
+            <img src="cosplay-white.jpg.JPEG" alt="活動支援BOX coming soon">
+          </div>
+          <div class="sns-body">
+            <div class="sns-title">活動支援BOX</div>
+            <div class="sns-caption">coming soon… 準備中です。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>GALLERY</h2>
+      <p style="font-size:12px; margin-bottom:6px;">
+        レースクイーン・ポーカークイーン・コスプレなど、代表的なビジュアルの一部です。
+      </p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="rq-header.jpg.JPEG" alt="スーパー耐久 レースクイーン">
+          <div class="gallery-caption">スーパー耐久 / Zenyaku With Team G-MOTION ANGEL</div>
+        </div>
+        <div class="gallery-item">
+          <img src="poker-trophy.jpg.PNG" alt="USOP JAPAN ポーカークイーン">
+          <div class="gallery-caption">USOP JAPAN / ポーカークイーン</div>
+        </div>
+        <div class="gallery-item">
+          <img src="cosplay-purple.jpg.JPEG" alt="ゲーム・アニメ系コスプレ">
+          <div class="gallery-caption">ゲーム・アニメ系コスプレコンパニオン</div>
+        </div>
+        <div class="gallery-item">
+          <img src="cosplay-white.jpg.JPEG" alt="イベントコスプレ">
+          <div class="gallery-caption">イベント衣装・キャラクター撮影</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 経歴 -->
+    <section id="career">
+      <h2>WORKS / 経歴</h2>
+
+      <div class="career-block">
+        <div class="career-label">主な出演・コンパニオン</div>
+        <p>電撃文庫夏フェア告知イベント（KADOKAWA／コスプレイヤー：和泉紗霧）</p>
+        <p>2018・2019 TOKYO AUTO SALON（タカラトミー／NATS）</p>
+        <p>バドワイザーガール／サマーソニック2018（サイゲームス）</p>
+        <p>GirlsAward（ファイブミニ）／東京ゲームショウ 2018（SEGA）</p>
+        <p>ジャンプフェスタ（マーベラス）／TGC（ウィズユー）</p>
+        <p>アニメジャパン（Netflix）／ラジコンカー ヨコモレディ</p>
+        <p>資生堂ジャパン メイクモデル／スポルテック（FITPLACE）</p>
+        <p>東京ゲームショウ2024（アクアプラス）／東京オートサロン2025（パナソニックオートモーティブシステムズ）</p>
+        <p>東京ゲームショウ2025（PayPal） ほか</p>
+      </div>
+
+      <div class="career-block">
+        <div class="career-label">レースクイーン / ポーカークイーン</div>
+        <p>2025年 スーパー耐久 60号車 Zenyaku With Team G-MOTION ANGEL</p>
+        <p>USOP JAPAN ポーカークイーン</p>
+        <p>全日本モトクロス選手権 YAMAHA レースクイーン</p>
+        <p>APL JAPAN ポーカークイーン</p>
+      </div>
+
+      <div class="career-block">
+        <div class="career-label">映像・雑誌</div>
+        <p>姫路セントラルパーク TVCM／ヨドバシカメラ TVCM</p>
+        <p>ギャルズ・パラダイス 2025年トップレースクイーン編</p>
+        <p>ギャルズ・パラダイス 2025年東京オートサロン編</p>
+      </div>
+    </section>
+
+    <!-- 連絡先 -->
+    <section id="contact">
+      <h2>CONTACT / ファンレター・プレゼント</h2>
+      <p class="contact-text">
+        お仕事のご相談は、所属経由または公式LINEからご連絡ください。<br>
+        ファンレターやプレゼントはこちらの住所宛てで受け付けています。
+      </p>
+      <div class="address-box">
+〒105-0014  
+東京都港区 芝4-11-5 田町ハラビル8階  
+virapture株式会社 プレゼント課 西野きなこ宛
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <div class="footer">
+      <div class="footer-img-wrap">
+        <img src="footer-dress.jpg.JPG" alt="西野きなこ ドレス写真">
+      </div>
+      <div>© Nishino Kinako / Siluia. All Rights Reserved.</div>
+    </div>
+
+  </main>
 </body>
 </html>

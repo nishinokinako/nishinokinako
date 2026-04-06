@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>活動支援 | 西野きなこ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "YuGothic", "Yu Gothic", Meiryo, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .support-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 16px 60px;
+      box-sizing: border-box;
+    }
+
+    .support-title {
+      text-align: center;
+      margin: 0 0 16px;
+      font-size: 32px;
+    }
+
+    .support-lead {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-size: 15px;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .support-card {
+      display: block;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #222;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+
+    .support-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .support-card-body {
+      padding: 14px 16px 18px;
+      text-align: center;
+    }
+
+    .support-card-title {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .support-card-price {
+      margin: 0;
+      font-size: 15px;
+      font-weight: bold;
+      color: #3c7cff;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 32px;
+      color: #3c7cff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="support-wrapper">
+    <h1 class="support-title">きなこ支援プラン🐼</h1>
+
+    <p class="support-lead">
+      きなこの日常や活動を支えてもらえる月額プランです。<br>
+      ごはんや生活の一部として使わせてもらい、活動を続けていきます。
+    </p>
+
+    <div class="support-grid">
+
+      <a href="https://ここにおやつURL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-pancake.png" alt="おやつプラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">おやつプラン</h3>
+          <p class="support-card-price">¥500 / 月</p>
+        </div>
+      </a>
+
+      <a href="https://ここにらんちURL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-omelette.png" alt="らんちプラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">らんちプラン</h3>
+          <p class="support-card-price">¥1,000 / 月</p>
+        </div>
+      </a>
+
+      <a href="https://ここに夜ごはんURL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-sushi.png" alt="夜ごはんプラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">夜ごはんプラン</h3>
+          <p class="support-card-price">¥3,000 / 月</p>
+        </div>
+      </a>
+
+      <a href="https://ここに特別ごはんURL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-party.png" alt="特別ごはんプラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">特別ごはんプラン</h3>
+          <p class="support-card-price">¥10,000 / 月</p>
+        </div>
+      </a>
+
+      <a href="https://ここに生活応援URL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-daily.png" alt="生活応援プラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">生活応援プラン</h3>
+          <p class="support-card-price">¥100,000 / 月</p>
+        </div>
+      </a>
+
+      <a href="https://ここに夢サポートURL" target="_blank" rel="noopener" class="support-card">
+        <img src="panda-atelier.png" alt="夢サポートプラン">
+        <div class="support-card-body">
+          <h3 class="support-card-title">夢サポートプラン</h3>
+          <p class="support-card-price">¥300,000 / 月</p>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="index.html" class="back-link">← トップページに戻る</a>
+  </main>
+
+</body>
+</html>
